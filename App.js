@@ -5,6 +5,31 @@ import WelcomeBanner from './components/home-screen/WelcomeBanner'
 import NavigationBar from './components/home-screen/NavigationBar'
 
 export default function App() {
+
+  const onViewGoals = () => {
+    console.log('view goals pressed')
+  }
+
+  const onCreateGoal = () => {
+    console.log('create goal pressed')
+  }
+
+  const onViewEventLog = () => {
+    console.log('view event log pressed')
+  }
+
+  const onSubmitEvent = () => {
+    console.log('submit event pressed')
+  }
+
+  const onSettings = () => {
+    console.log('settings prsesed')
+  }
+
+  const onViewAchievements = () => {
+    console.log('view achievements prssed')
+  }
+
   return (
     <View style={styles.outermost}>
       <NavigationBar text={'Application Home'} />
@@ -12,9 +37,9 @@ export default function App() {
       <View style={styles.container}>
         <WelcomeBanner />
         <View style={styles.bottomView}>
-            <ButtonRow firstButtonTitle={'View Goals'} secondButtonTitle={'Create Goal'}/>
-            <ButtonRow firstButtonTitle={'View Event Log'} secondButtonTitle={'Submit Event'}/>
-            <ButtonRow firstButtonTitle={'Settings'} secondButtonTitle={'View Achievements'}/>
+            <ButtonRow firstButtonTitle={'View Goals'} onFirstButtonPress={onViewGoals} secondButtonTitle={'Create Goal'} onSecondButtonPress={onCreateGoal}/>
+            <ButtonRow firstButtonTitle={'View Event Log'} secondButtonTitle={'Submit Event'} onFirstButtonPress={onViewEventLog} onSecondButtonPress={onSubmitEvent}/>
+            <ButtonRow firstButtonTitle={'Settings'} secondButtonTitle={'View Achievements'} onFirstButtonPress={onSettings} onSecondButtonPress={onViewAchievements}/>
         </View>
 
       </View>

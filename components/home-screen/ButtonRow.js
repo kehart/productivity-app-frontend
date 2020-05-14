@@ -5,11 +5,11 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 const ButtonRow = props => {
     return (
         <View style={styles.rowView}>
-            <TouchableOpacity style={styles.touchableTile}>
+            <TouchableOpacity style={styles.touchableTile} onPress={props.onFirstButtonPress}>
                 <Text> {props.firstButtonTitle}</Text>
             </TouchableOpacity>
             
-            <TouchableOpacity style={styles.touchableTile}>
+            <TouchableOpacity style={styles.touchableTile} onPress={props.onSecondButtonPress}>
             <Text> {props.secondButtonTitle}</Text>
             </TouchableOpacity>
         </View>
