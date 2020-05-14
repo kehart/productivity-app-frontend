@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
+import ButtonRow from './components/home-screen/ButtonRow'
 
 export default function App() {
   return (
@@ -20,32 +21,9 @@ export default function App() {
         </View>
         <View style={styles.bottomView}>
 
-            <View style={styles.rowView}>
-              <TouchableOpacity style={styles.touchableTile}>
-                <Text> View Goals</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.touchableTile}>
-                <Text> Create Goal</Text>
-              </TouchableOpacity>
-            </View>
-
-            <View style={styles.rowView}>
-            <TouchableOpacity style={styles.touchableTile}>
-                <Text> View Event Log</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.touchableTile}>
-                <Text> Submit Event</Text>
-              </TouchableOpacity>
-            </View>
-
-            <View style={styles.rowView}>
-            <TouchableOpacity style={styles.touchableTile}>
-                <Text> Settings</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.touchableTile}>
-                <Text> View Achievements</Text>
-              </TouchableOpacity>
-            </View>
+            <ButtonRow firstButtonTitle={'View Goals'} secondButtonTitle={'Create Goal'}/>
+            <ButtonRow firstButtonTitle={'View Event Log'} secondButtonTitle={'Submit Event'}/>
+            <ButtonRow firstButtonTitle={'Settings'} secondButtonTitle={'View Achievements'}/>
         </View>
 
       </View>
