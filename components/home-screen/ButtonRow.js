@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 
 const ButtonRow = props => {
@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderRadius: 15
       },
-      // Level 3, within rowView
       touchableTile: {
         backgroundColor: 'red',
         marginHorizontal: 15,

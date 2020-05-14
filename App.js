@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import ButtonRow from './components/home-screen/ButtonRow'
 import WelcomeBanner from './components/home-screen/WelcomeBanner'
 import NavigationBar from './components/home-screen/NavigationBar'
@@ -19,14 +19,10 @@ export default function App() {
 
       </View>
     </View>
-
-
-
   );
 }
 
 const styles = StyleSheet.create({
-  // Level 0
   outermost: {
     flex: 1,
     backgroundColor: '#fff',
@@ -34,7 +30,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingTop: 25
   },
-  // Level 1
   container: {
     flex: 10,
     backgroundColor: '#fff',
