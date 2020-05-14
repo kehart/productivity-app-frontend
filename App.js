@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
 import ButtonRow from './components/home-screen/ButtonRow'
+import WelcomeBanner from './components/home-screen/WelcomeBanner'
 
 export default function App() {
   return (
@@ -9,18 +10,9 @@ export default function App() {
         <Text> Application home</Text>
       </View>
       
-      
       <View style={styles.container}>
-        <View style={styles.topView}>
-          <View style={styles.logoView}>
-            <Text> Logo style</Text>
-          </View>
-          <View style={styles.textView}>
-            <Text> Text style</Text>
-          </View>
-        </View>
+        <WelcomeBanner />
         <View style={styles.bottomView}>
-
             <ButtonRow firstButtonTitle={'View Goals'} secondButtonTitle={'Create Goal'}/>
             <ButtonRow firstButtonTitle={'View Event Log'} secondButtonTitle={'Submit Event'}/>
             <ButtonRow firstButtonTitle={'Settings'} secondButtonTitle={'View Achievements'}/>
@@ -59,54 +51,11 @@ const styles = StyleSheet.create({
     padding: 20,
     width: '100%'
   },
-  // Level 2, within container
-  topView: {
-    borderWidth: 1,
-    borderColor: 'red',
-    flex: 2,
-    width: '100%',
-    margin: 10,
-    flexDirection: 'row'
-  },
   bottomView: {
     borderWidth: 1,
     borderColor: 'red',
     flex: 4,
     width: '100%',
     margin: 10
-  },
-  // Level 2, within topView
-  logoView: {
-    borderWidth: 1,
-    borderColor: 'red',
-    flex: 1
-  },
-  textView: {
-    borderWidth: 1,
-    borderColor: 'red',
-    flex: 3
-  },
-  // Level 2, within bottomView
-  rowView: {
-    // borderWidth: 1,
-    // borderColor: 'green',
-    flex: 1,
-    marginHorizontal: 10,
-    marginVertical: 5,
-    flexDirection: 'row',
-    padding: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 15
-  },
-  // Level 3, within rowView
-  touchableTile: {
-    backgroundColor: 'red',
-    marginHorizontal: 15,
-    height: '85%',
-    flex: 1,
-    borderRadius: 15,
-    justifyContent: 'center',
-    alignItems: 'center'
   },
 });
