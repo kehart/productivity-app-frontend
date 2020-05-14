@@ -2,13 +2,12 @@ import React from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
 import ButtonRow from './components/home-screen/ButtonRow'
 import WelcomeBanner from './components/home-screen/WelcomeBanner'
+import NavigationBar from './components/home-screen/NavigationBar'
 
 export default function App() {
   return (
     <View style={styles.outermost}>
-      <View style={styles.topBar}> 
-        <Text> Application home</Text>
-      </View>
+      <NavigationBar text={'Application Home'} />
       
       <View style={styles.container}>
         <WelcomeBanner />
@@ -36,13 +35,6 @@ const styles = StyleSheet.create({
     paddingTop: 25
   },
   // Level 1
-  topBar : {
-    borderWidth: 1,
-    borderColor: 'red',
-    flex: 1,
-    width: '100%',
-    backgroundColor: 'grey'
-  },
   container: {
     flex: 10,
     backgroundColor: '#fff',
