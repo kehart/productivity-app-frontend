@@ -10,6 +10,7 @@ export default function App() {
   const [isAddEventMode, setIsAddEventMode] = useState(false);
   const [isCreateGoalMode, setIsCreateGoalMode] = useState(false);
 
+  // Button handler
   const onViewGoals = () => {
     console.log('view goals pressed')
   }
@@ -17,15 +18,6 @@ export default function App() {
   const onCreateGoal = () => {
     console.log('create goal pressed')
     setIsCreateGoalMode(true);
-  }
-
-  // handler for modal submission
-  const createGoalHandler = () => {
-    setIsCreateGoalMode(false);
-  }
-
-  const cancelGoalHandler = () => {
-    setIsCreateGoalMode(false);
   }
 
   const onViewEventLog = () => {
@@ -37,7 +29,24 @@ export default function App() {
     setIsAddEventMode(true);
   }
 
-  // handler for modal submission
+  const onSettings = () => {
+    console.log('settings prsesed')
+  }
+
+  const onViewAchievements = () => {
+    console.log('view achievements prssed')
+  }
+
+  // Modal Handlers
+
+  const createGoalHandler = () => {
+    setIsCreateGoalMode(false);
+  }
+
+  const cancelGoalHandler = () => {
+    setIsCreateGoalMode(false);
+  }
+
   const submitEventHandler = () => {
     setIsAddEventMode(false);
   }
@@ -46,13 +55,7 @@ export default function App() {
     setIsAddEventMode(false);
   }
 
-  const onSettings = () => {
-    console.log('settings prsesed')
-  }
-
-  const onViewAchievements = () => {
-    console.log('view achievements prssed')
-  }
+  
 
   return (
     <View style={styles.outermost}>
