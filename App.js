@@ -1,10 +1,14 @@
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, } from 'react-native';
 import ButtonRow from './components/home-screen/ButtonRow'
 import WelcomeBanner from './components/home-screen/WelcomeBanner'
 import NavigationBar from './components/home-screen/NavigationBar'
+import SubmitEventModal from './components/home-screen/SubmitEventModal';
+import CreateGoalModal from './components/home-screen/CreateGoalModal';
 
 export default function App() {
+  const [isAddEventMode, setIsAddEventMode] = useState(false);
+  const [isCreateGoalMode, setIsCreateGoalMode] = useState(false);
 
   const onViewGoals = () => {
     console.log('view goals pressed')
@@ -12,6 +16,16 @@ export default function App() {
 
   const onCreateGoal = () => {
     console.log('create goal pressed')
+    setIsCreateGoalMode(true);
+  }
+
+  // handler for modal submission
+  const createGoalHandler = () => {
+    setIsCreateGoalMode(false);
+  }
+
+  const cancelGoalHandler = () => {
+    setIsCreateGoalMode(false);
   }
 
   const onViewEventLog = () => {
@@ -20,6 +34,16 @@ export default function App() {
 
   const onSubmitEvent = () => {
     console.log('submit event pressed')
+    setIsAddEventMode(true);
+  }
+
+  // handler for modal submission
+  const submitEventHandler = () => {
+    setIsAddEventMode(false);
+  }
+
+  const cancelEventHandler = () => {
+    setIsAddEventMode(false);
   }
 
   const onSettings = () => {
@@ -35,6 +59,8 @@ export default function App() {
       <NavigationBar text={'Application Home'} />
       
       <View style={styles.container}>
+        <SubmitEventModal visible={isAddEventMode} onSubmit={submitEventHandler} onCancel={cancelEventHandler} />
+        <CreateGoalModal visible={isCreateGoalMode} onSubmit={createGoalHandler} onCancel={cancelGoalHandler}/>
         <WelcomeBanner />
         <View style={styles.bottomView}>
             <ButtonRow firstButtonTitle={'View Goals'} onFirstButtonPress={onViewGoals} secondButtonTitle={'Create Goal'} onSecondButtonPress={onCreateGoal}/>
